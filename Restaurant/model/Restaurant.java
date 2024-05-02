@@ -1,50 +1,90 @@
 package model;
 
+import java.time.LocalTime;
+import java.util.List;
+
 public class Restaurant {
 
-    private String RestaurantName;
-    private String cuisinetype;
-    private String Location;
-    private boolean isOpening ;
+    //private long restaurantId;
+    private String name;
+    private String cuisineType;
+    private String location;
+    private LocalTime openingTime;
+    private LocalTime closingTime;
+    private List<MenuItem> menuItems;
+    private boolean isActive;
 
-    public Restaurant(String restaurantName, String cuisinetype, String location) {
-        RestaurantName = restaurantName;
-        this.cuisinetype = cuisinetype;
-        Location = location;
+    public Restaurant(String name, String cuisineType, String location, LocalTime openingTime, LocalTime closingTime, List<MenuItem> menuItems, boolean isActive) {
+        this.name = name;
+        this.cuisineType = cuisineType;
+        this.location = location;
+        this.openingTime = openingTime;
+        this.closingTime = closingTime;
+        this.menuItems = menuItems;
+        this.isActive = isActive;
     }
 
-    public String getRestaurantName() {
-        return RestaurantName;
+    public Restaurant(String name, String cuisineType, String location) {
+        this.name = name;
+        this.cuisineType = cuisineType;
+        this.location = location;
     }
 
-    public String getCuisinetype() {
-        return cuisinetype;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCuisineType() {
+        return cuisineType;
+    }
+
+    public void setCuisineType(String cuisineType) {
+        this.cuisineType = cuisineType;
     }
 
     public String getLocation() {
-        return Location;
-    }
-
-    public boolean isActiveStatus() {
-        return isOpening;
-    }
-
-    public void setRestaurantName(String restaurantName) {
-        RestaurantName = restaurantName;
-    }
-
-    public void setCuisinetype(String cuisinetype) {
-        this.cuisinetype = cuisinetype;
+        return location;
     }
 
     public void setLocation(String location) {
-        Location = location;
+        this.location = location;
     }
 
-    public void setActiveStatus(boolean activeStatus) {
-        this.activeStatus = activeStatus;
+    public LocalTime getOpeningTime() {
+        return openingTime;
     }
 
+    public void setOpeningTime(LocalTime openingTime) {
+        this.openingTime = openingTime;
+    }
+
+    public LocalTime getClosingTime() {
+        return closingTime;
+    }
+
+    public void setClosingTime(LocalTime closingTime) {
+        this.closingTime = closingTime;
+    }
+
+    public List<MenuItem> getMenuItems() {
+        return menuItems;
+    }
+
+    public void setMenuItems(List<MenuItem> menuItems) {
+        this.menuItems = menuItems;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
 
 
 }
